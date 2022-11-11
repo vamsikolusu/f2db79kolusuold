@@ -1,0 +1,31 @@
+{
+  "name": "f2db79kolusu",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.7.1",
+    "morgan": "~1.9.1",
+    "pug": "^3.0.2"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vamsikolusu/f2db79kolusu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vamsikolusu/f2db79kolusu/issues"
+  },
+  "homepage": "https://github.com/vamsikolusu/f2db79kolusu#readme",
+  "description": ""
+}
