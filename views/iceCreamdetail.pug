@@ -1,0 +1,25 @@
+extends layout 
+ 
+block content 
+  h1(class = 'container-fluid p-5 bg-success text-info text-center')= title 
+ if (toShow == null) 
+    h2 No instance to delete 
+  else
+    - let iceCreamid = toShow._id 
+    - let iceCream_brand = toShow.icecream_brand 
+    - let iceCream_flavour = toShow.icecream_flavour
+    - let calories = toShow.calories
+
+    div(class='justify-content-center p-2 text-center text-dark',style='background-color:red')
+      div.row 
+        div(class='iceCreamAttr mr-3') iceCream ID is: 
+        div #{iceCreamid} 
+      div.row 
+        div(class='iceCreamAttr mr-3') iceCream brand  is: 
+        div #{iceCream_brand} 
+      div.row 
+        div(class='iceCreamAttr mr-3') iceCream quantity is: 
+        div #{iceCream_flavour} 
+      div.row 
+        div(class='iceCreamAttr mr-3') iceCream calories is: 
+        div #{calories} 

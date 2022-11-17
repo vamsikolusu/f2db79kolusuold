@@ -1,0 +1,36 @@
+extends layout 
+ 
+block content 
+  h1(class = 'container-fluid p-5 bg-warning text-danger text-center')= title 
+  
+  form(id='iceCreamForm', action="/resource/iceCream", method="POST") 
+    div.form-group 
+        label.iceCreamAttr(for='icecream_brand') iceCream brand
+        input#icecream_brand(type='text', name='icecream_brand') 
+    div.form-group 
+        label.iceCreamAttr(for='icecream_flavour') iceCream flavour 
+        input#icecream_flavour(type='text', name='icecream_flavour') 
+    div.form-group 
+        label.iceCreamAttr(for='calories') iceCream calories 
+        input#calories(type='number', name='calories') 
+    input(class="btn btn-primary" type="submit") 
+    
+ 
+  script. 
+    document.forms['iceCreamForm'].addEventListener('submit', (event) => { 
+      event.preventDefault(); 
+      // TODO do something here to show user that form is being submitted 
+      fetch(event.target.action, { 
+        method: 'POST', 
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Save succeded") 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Save failed " + error ) 
+      }); 
+    }); 
+    
