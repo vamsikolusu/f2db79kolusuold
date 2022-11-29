@@ -30,6 +30,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(require('express-session')({ 
+  secret: 'keyboard cat', 
+  resave: false, 
+  saveUninitialized: false 
+})); 
+app.use(passport.initialize()); 
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -37,13 +44,7 @@ app.use('/users', usersRouter);
 app.use('/iceCream', iceCreamRouter);
 app.use('/gridbuild', gridbuildRouter);
 app.use('/selector', selectorRouter);
-app.use(require('express-session')({ 
-  secret: 'keyboard cat', 
-  resave: false, 
-  saveUninitialized: false 
-})); 
-app.use(passport.initialize()); 
-app.use(passport.session()); 
+ 
  
 
 app.use('/resource', resourceRouter);
