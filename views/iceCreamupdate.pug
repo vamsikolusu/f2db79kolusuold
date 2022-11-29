@@ -2,7 +2,7 @@ extends layout
  
 block content 
   h1(class = 'container-fluid p-5 bg-info text-danger text-center')= title 
- if (toShow == null) 
+  if (toShow == null) 
     h2 No instance to delete 
   else
     - let iceCreamid = toShow._id 
